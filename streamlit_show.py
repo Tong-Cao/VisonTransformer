@@ -141,7 +141,7 @@ if st.button("Get Inference"):
         PATH = 'myvit.pth'
         model = ViT_Model(image_size=224, patch_size=16, embed_size=768, num_classes=176,
                         num_layers=2, heads=12, mlp_dim=3072, dropout=0.5, emb_dropout=0.5)
-        model.load_state_dict(torch.load(PATH))
+        model.load_state_dict(torch.load(PATH,map_location=torch.device('cpu')))
 
         # 推理
         pred = inference(model, input_image)
