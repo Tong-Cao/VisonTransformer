@@ -1,4 +1,4 @@
 streamlit
-pytorch
+torch
 pillow
 pandas
