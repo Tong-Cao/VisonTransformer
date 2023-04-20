@@ -1,0 +1,4 @@
+streamlit
+pytorch
+pillow
+pandas
