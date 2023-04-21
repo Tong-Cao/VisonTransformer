@@ -96,11 +96,10 @@ def image_preprocess(img):
     img = Image.open(img)
     # 转换为tensor
     img = transforms.ToTensor()(img)
-    # resize大小为224
-    img = transforms.Resize(224)(img)
+    # resize大小为224 * 224 不保持原图片的宽高比
+    img = transforms.Resize(224,224)(img)
     # 添加batch_size维度
     img = img.unsqueeze(0)
-    print('img.shape',img.shape)
     return img
 
 # 模型推理
@@ -137,7 +136,7 @@ if st.button("Get Inference"):
         st.image(input_image, use_column_width=True)
         # 图片预处理
         input_image = image_preprocess(input_image)
-        st.write("img.shape",input_image.shape)
+       
         # 加载模型
         PATH = 'myvit.pth'
         model = ViT_Model(image_size=224, patch_size=16, embed_size=768, num_classes=176,
