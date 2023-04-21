@@ -136,7 +136,7 @@ if st.button("Get Inference"):
         st.image(input_image, use_column_width=True)
         # 图片预处理
         input_image = image_preprocess(input_image)
-       
+        st.image(input_image, use_column_width=True)
         # 加载模型
         PATH = 'myvit.pth'
         model = ViT_Model(image_size=224, patch_size=16, embed_size=768, num_classes=176,
