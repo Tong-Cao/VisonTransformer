@@ -100,6 +100,7 @@ def image_preprocess(img):
     img = transforms.Resize(224)(img)
     # 添加batch_size维度
     img = img.unsqueeze(0)
+    print('img.shape',img.shape)
     return img
 
 # 模型推理
