@@ -136,8 +136,8 @@ if st.button("Get Inference"):
         st.image(input_image, use_column_width=True)
         # 图片预处理
         input_image = image_preprocess(input_image)
-        # 转换为PIL格式
-        showimg = Image.open(input_image[0])
+        # tensor转换为PIL格式
+        showimg = transforms.ToPILImage()(input_image.squeeze(0))
         #展示预处理后的图片
         st.image(showimg, use_column_width=True)
         # 加载模型
