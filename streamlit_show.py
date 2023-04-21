@@ -97,7 +97,7 @@ def image_preprocess(img):
     # 转换为tensor
     img = transforms.ToTensor()(img)
     # resize大小为224 * 224 不保持原图片的宽高比
-    img = transforms.Resize(224,224)(img)
+    img = transforms.Resize((224,224))(img)
     # 添加batch_size维度
     img = img.unsqueeze(0)
     return img
