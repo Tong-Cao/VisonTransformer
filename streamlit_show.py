@@ -112,7 +112,7 @@ def inference(model, img):
     # print('名称',class_name)
     with torch.no_grad():
         logits = model(img)
-        pred = torch.argmax(logits, dim=1)
+        pred = torch.argmax(logits, dim=1).item()
         # 将预测结果转换为类别名称
         pred = class_to_num.iloc[pred,0].values[0]
         return pred
