@@ -94,6 +94,8 @@ class ViT_Model(nn.Module):
 def image_preprocess(img):
     # 转换为PIL格式
     img = Image.open(img)
+    # 图片转换为3通道
+    img = img.convert("RGB")
     # 转换为tensor
     img = transforms.ToTensor()(img)
     # resize大小为224 * 224 不保持原图片的宽高比
