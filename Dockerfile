@@ -4,7 +4,7 @@ RUN mkdir /ct_ViT
 
 COPY requirements.txt /ct_ViT
 
-WORKDIR /ct_streamlit
+WORKDIR /ct_ViT
 
 RUN pip install -r requirements.txt
 
